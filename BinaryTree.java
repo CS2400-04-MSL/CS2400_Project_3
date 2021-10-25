@@ -119,33 +119,23 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
     *          1. public int getHeight_callBinaryNodeMethod()
     *     . In BinaryNode.java
     *          2. public int getHeight_binaryNodeMethod()*/
-   
+
    /** calls getHeight(BinaryNode<T> node)
    @return  The height of the "whole" tree */
    public int getHeight()
    {
-	   return getHeight(root);
+	   return getHeight_callBinaryNodeMethod();
    } // end getHeight
+
    
-   /** A Recursive Method in the BinaryTree Class  
-    * Computes the height of the subtree rooted at this node.
-   @return  The height of the subtree rooted at this node. */
-   private int getHeight(BinaryNode<T> node)
-   {
-      int height = 0;
-      if (node != null)
-         height = 1 + Math.max(getHeight(node.getLeftChild()),
-                               getHeight(node.getRightChild()));
-      return height;
-   } // end getHeight
-   
-   /** The following calls getHeight_binaryNodeMethod() which is a recursive binaryNode class method
-    * Computes the height of the "whole" tree.
+   /** The following calls getHeight_binaryNodeMethod() to return the height of the whole tree
+    *
    @return  The height of the "whole" tree. */
    public int getHeight_callBinaryNodeMethod()
    {
-	   return 0;
+	   return root.getHeight_binaryNodeMethod();
    } // end getHeight_callBinaryNodeMethod
+
 
    /** -------------------------------------------------------------------- */
    /** Task 3: Implement the 2 methods
@@ -157,7 +147,7 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    @return  The number of nodes in the "whole" tree */
    public int getNumberOfNodes()
    {
-      return 0;
+      return getNumberOfNodes(root);
    } // end getNumberOfNodes
    
    /** A Recursive Method in the BinaryTree Class   
@@ -165,7 +155,12 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    @return  The number of nodes in the subtree rooted at this node. */
    private int getNumberOfNodes(BinaryNode<T> node)
    {
-      return 0;
+      int numNodes = 0;
+      if (node != null)
+         numNodes = (1 + getNumberOfNodes(node.getLeftChild())
+                       + getNumberOfNodes(node.getRightChild()));
+
+      return numNodes;
    } // end getNumberOfNodes
    
    /** The following calls getNumberOfNodes_binaryNodeMethod() which is a recursive binaryNode class method
