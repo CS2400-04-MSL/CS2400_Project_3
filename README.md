@@ -1,5 +1,5 @@
 # CS2400_Project_3
-Group name M.S.L. : Manji Hui, Steven Watson, Leonard Woo
+Group name M.S.L. : Manji Hui (JustAManji), Steven Watson (Sulfurous-Impersonation), Leonard Woo (lwoo66)
 
 Maji Hui - Task 4, Unit Tests
 
