@@ -7,4 +7,4 @@ Leonard Woo - Task 2, 3
 
 June Watson - Task 1
 
-[video](https://www.youtube.com/watch?v=xRK7UVtSyXE)
+[video]()
